@@ -7,6 +7,10 @@ You can use the object in `wp_localize_script()` to print all string translation
 
 There's a few filters that you can use to configure the plugin.
 
+## Requirements
+- Polylang
+- PHP 5.4+
+
 ## Installation
 
 Install the plugin via [Composer](https://getcomposer.org/)
@@ -18,6 +22,7 @@ Activate the plugin
 ```
 wp plugin activate polylang-get-all-translations
 ```
+
 ## Usage
 ```php
 wp_enqueue_script('theme-js', get_stylesheet_directory_uri() . '/dist/js/bundle.js', false, $version, true);
