@@ -58,11 +58,17 @@ namespace k1sul1\Polylang\GAA {
 
   function get_keypairs() {
     $cached_keypairs = get_cached_keypairs();
-    $entry_count = count($cached_keypairs);
+    $entry_count = count(get_all_entries());
     $options = get_options();
 
     if ($options['string_count'] === $entry_count && $cached_keypairs) {
-      // Assume cache to be fresh. Stricter checking is likely too resource intensive.
+      // If there's a valid transient, and the option count matches entry count,
+      // cache is assumed fresh.
+
+      // Known edge case: if you remove one pll_register_string() call, and add another,
+      // and then clean the string translation database, the cache is still considered valid
+      // by this. Clearing transients is a sure way to get fresh strings.
+
       return $cached_keypairs;
     }
 
