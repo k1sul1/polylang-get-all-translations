@@ -1,0 +1,14 @@
+{
+    "name": "k1sul1/polylang-get-all-translations",
+    "description": "New function to Polylang that prints all translations as key-value pairs.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Christian Nikkanen",
+            "email": "christian.nikkanen@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
