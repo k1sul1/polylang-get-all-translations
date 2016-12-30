@@ -3,7 +3,7 @@
 Plugin Name: Polylang - Get all translations
 Plugin URI:  https://github.com/k1sul1/polylang-get-all-translations
 Description: Basic plugin that defines function pll_get_all_translations() if it doesn't exist. Useful in client side operations.
-Version:     0.1
+Version:     0.1.1
 Author:      k1sul1
 Author URI:  https://github.com/k1sul1
 License:     GPL2
