@@ -18,4 +18,8 @@ Activate the plugin
 ```
 wp plugin activate polylang-get-all-translations
 ```
-
+## Usage
+```php
+wp_enqueue_script('theme-js', get_stylesheet_directory_uri() . '/dist/js/bundle.js', false, $version, true);
+wp_localize_script('theme-js', 'pll', pl_get_all_translations());
+```
