@@ -3,7 +3,7 @@
 Plugin Name: Polylang - Get all translations
 Plugin URI:  https://github.com/k1sul1/polylang-get-all-translations
 Description: Basic plugin that defines function pll_get_all_translations() if it doesn't exist. Useful in client side operations.
-Version:     0.1.2
+Version:     0.1.3
 Author:      k1sul1
 Author URI:  https://github.com/k1sul1
 License:     GPL2
@@ -56,8 +56,8 @@ namespace k1sul1\Polylang\GAA {
     return $keypairs;
   }
 
-  function get_keypairs() {
-    $current_lang = pll_current_language();
+  function get_keypairs($lang = NULL) {
+    $current_lang = !is_null($lang) ? $lang : pll_current_language();
     $cached_keypairs = get_cached_keypairs($current_lang);
     $entry_count = count(get_all_entries());
     $options = get_options();
@@ -80,8 +80,8 @@ namespace k1sul1\Polylang\GAA {
 namespace {
   if (!function_exists('pl_get_all_translations')) {
     // Single 'l' to minimize conflict.
-    function pl_get_all_translations() {
-      return k1sul1\Polylang\GAA\get_keypairs();
+    function pl_get_all_translations($lang = NULL) {
+      return k1sul1\Polylang\GAA\get_keypairs($lang);
     }
   }
 }
