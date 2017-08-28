@@ -62,7 +62,7 @@ namespace k1sul1\Polylang\GAA {
     $entry_count = count(get_all_entries());
     $options = get_options();
 
-    if ($options['string_count'] === $entry_count && $cached_keypairs) {
+    if (($options['string_count'] === $entry_count) && $cached_keypairs) {
       // If there's a valid transient, and the option count matches entry count,
       // cache is assumed fresh.
 
